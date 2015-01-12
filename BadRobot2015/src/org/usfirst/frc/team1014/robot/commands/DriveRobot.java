@@ -8,7 +8,7 @@ public class DriveRobot extends BadCommand {
     
 	public DriveRobot()
     {
-        requires((Subsystem) driveTrain);
+        //requires((Subsystem) driveTrain); // This line causes the error
     }
 
 	@Override
@@ -27,7 +27,6 @@ public class DriveRobot extends BadCommand {
 	protected void execute() 
 	{
 		driveTrain.tankDrive(OI.xboxController.getLeftStickY(), OI.xboxController.getRightStickY());
-		
 	}
 
 	@Override
@@ -45,6 +44,6 @@ public class DriveRobot extends BadCommand {
 	@Override
 	protected void interrupted() 
 	{
-		log("I've been interrupted and am deffering to the new Command");
+
 	}
 }

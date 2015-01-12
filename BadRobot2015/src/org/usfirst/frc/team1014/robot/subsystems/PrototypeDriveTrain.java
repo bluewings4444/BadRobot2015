@@ -1,10 +1,10 @@
 package org.usfirst.frc.team1014.robot.subsystems;
 
 import org.usfirst.frc.team1014.robot.RobotMap;
-import org.usfirst.frc.team1014.robot.subsystems.interfaces.IDriveTrain;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -16,7 +16,7 @@ public class PrototypeDriveTrain extends BadSubsystem
 	private static PrototypeDriveTrain instance;
 	
 	RobotDrive train;
-	SpeedController frontLeft, backLeft, frontRight, backRight;
+	Talon frontLeft, backLeft, frontRight, backRight;
 	
     public static PrototypeDriveTrain getInstance()
     {
@@ -30,10 +30,10 @@ public class PrototypeDriveTrain extends BadSubsystem
     @Override
 	protected void initialize()
     {
-        /*frontLeft = new Talon(RobotMap.frontLeftController);
+        frontLeft = new Talon(RobotMap.frontLeftController);
         backLeft = new Talon(RobotMap.backLeftController);
         frontRight = new Talon(RobotMap.frontRightController);
-        backRight = new Talon(RobotMap.backRightController);*/ // get it right on the Roborio
+        backRight = new Talon(RobotMap.backRightController); 
     	
     	train = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
 		

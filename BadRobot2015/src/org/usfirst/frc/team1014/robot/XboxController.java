@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.usfirst.frc.team1014.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -12,9 +8,9 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class XboxController extends Joystick
 {
-    public static double DEADZONE_MAGIC_NUMBER = .20;
+    public static double DEADZONE_MAGIC_NUMBER = .15;
     
-    private static int LEFT_STICK_X = 1, LEFT_STICK_Y = 2, RIGHT_STICK_X = 4, RIGHT_STICK_Y = 5;
+    private static int LEFT_STICK_X = 0, LEFT_STICK_Y = 1, RIGHT_STICK_X = 3, RIGHT_STICK_Y = 4;
     private static int A_BUTTON = 1, B_BUTTON = 2, X_BUTTON = 3, Y_BUTTON = 4, 
                         LB = 5, RB = 6, SELECT = 7, START = 8, LEFT_JOY_CLICK = 9, RIGHT_JOY_CLICK = 10;
     private static int TRIGGERS = 3;

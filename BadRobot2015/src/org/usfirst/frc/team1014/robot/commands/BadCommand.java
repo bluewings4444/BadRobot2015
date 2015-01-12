@@ -2,13 +2,12 @@ package org.usfirst.frc.team1014.robot.commands;
 
 import org.usfirst.frc.team1014.robot.OI;
 import org.usfirst.frc.team1014.robot.commands.CommandBase;
-import org.usfirst.frc.team1014.robot.subsystems.interfaces.Logger;
 
 /**
  *
- * @author Isaac
+ * @author Isaac stolen by Steve
  * */
-public abstract class BadCommand extends CommandBase implements Logger 
+public abstract class BadCommand extends CommandBase 
 {
     protected static final boolean CONSOLE_OUTPUT_ENABLED = true;
     
@@ -24,13 +23,6 @@ public abstract class BadCommand extends CommandBase implements Logger
      */
     protected abstract void initialize();
         
-    public void log(String str) 
-    {
-        if (CONSOLE_OUTPUT_ENABLED) 
-        {
-            System.out.println(getConsoleIdentity()+": "+str);
-        }
-    }
     
     public abstract String getConsoleIdentity();
     

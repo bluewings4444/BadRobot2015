@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team1014.robot.*;
 import org.usfirst.frc.team1014.robot.subsystems.PrototypeDriveTrain;
-import org.usfirst.frc.team1014.robot.subsystems.interfaces.IDriveTrain;
 
 
 /**
@@ -24,7 +23,7 @@ public abstract class CommandBase extends Command {
     
     public static void init() {
         //Final Subsystems
-    	driveTrain = new PrototypeDriveTrain();
+    	driveTrain = PrototypeDriveTrain.getInstance();
     	
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
