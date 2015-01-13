@@ -163,7 +163,7 @@ public class Robot extends IterativeRobot {
         //whenever the controller moves LESS than the magic number, the 
         //joystick is in the loose position so return zero - as if the 
         //joystick was not moved
-        if (Math.abs(d) < .15) {
+        if (Math.abs(d) < RobotMap.DEADZONE_MAGIC_NUMBER) {
             return 0;
         }
         
@@ -174,7 +174,7 @@ public class Robot extends IterativeRobot {
         //When the joystick is used for a purpose (passes the if statements, 
         //hence not just being loose), do math
         return (d / Math.abs(d)) //gets the sign of d, negative or positive
-            * ((Math.abs(d) - .15) / (1 - .15)); //scales it
+            * ((Math.abs(d) - RobotMap.DEADZONE_MAGIC_NUMBER) / (1 - RobotMap.DEADZONE_MAGIC_NUMBER)); //scales it
     }
     public static double nearOne(double d)
     {

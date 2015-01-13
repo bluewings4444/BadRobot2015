@@ -11,6 +11,8 @@ public class RobotMap {
     // public static int leftMotor = 1;
     // public static int rightMotor = 2;
 	
+	public static double DEADZONE_MAGIC_NUMBER = .15;
+	
 	public static int frontLeftController = 1; // 0
 	public static int backLeftController = 0; // 1
 	public static int frontRightController = 3; //2
