@@ -11,6 +11,11 @@ public class RobotMap {
     // public static int leftMotor = 1;
     // public static int rightMotor = 2;
 	
+<<<<<<< HEAD:BadRobot2015/src/org/usfirst/frc/team1014/robot/RobotMap.java
+	public static double DEADZONE_MAGIC_NUMBER = .15;
+	
+=======
+>>>>>>> d6efd342df2ae6bca10e71e8a4cfd8c022d1ff84:BadRobot2015/src/robot/RobotMap.java
 	public static int frontLeftController = 1; // 0
 	public static int backLeftController = 0; // 1
 	public static int frontRightController = 3; //2

@@ -7,7 +7,7 @@ public class TankDrive extends BadCommand {
     
 	public TankDrive()
     {
-        requires((Subsystem) driveTrain); // This line causes the error
+        //requires((Subsystem) driveTrain); // This line causes the error
     }
 
 	@Override
