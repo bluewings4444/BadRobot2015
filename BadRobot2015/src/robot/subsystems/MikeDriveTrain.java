@@ -16,7 +16,7 @@ public class MikeDriveTrain extends BadSubsystem
 	private static MikeDriveTrain instance;
 	
 	RobotDrive train;
-	Talon frontLeft, backLeft, frontRight, backRight;
+	SpeedController frontLeft, backLeft, frontRight, backRight;
 	Gyro gyro;
 	
     public static MikeDriveTrain getInstance()
@@ -52,7 +52,7 @@ public class MikeDriveTrain extends BadSubsystem
 	@Override
 	protected void initDefaultCommand() 
 	{
-		//this.setDefaultCommand(new DriveRobot()); //??
+		this.setDefaultCommand(new DpadDrive()); //??
 	}
 	
     public void tankDrive(double leftY, double rightY) //analogs
