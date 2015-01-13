@@ -22,14 +22,17 @@ import robot.commands.TankDrive;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
+	public static Joystick controller = new Joystick(0);
+	public static int soCounter = 0; 
+
+    BadCommand driveRobot;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-		
-    	CommandBase.init();
+		oi = new OI();
         // instantiate the command used for the autonomous period
         //driveRobot = new DriveRobot(); // This line throws an error in the DRIVER STATION
     }
@@ -51,7 +54,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
-    	
+    	CommandBase.init();
     }
 
     /**
@@ -75,5 +78,14 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+	public static void so(Object s)
+	{
+		if(soCounter > 100)
+		{
+			System.out.println("Robot: " + s);
+			soCounter = 0;
+		}
+		soCounter++;
+	}
     
 }

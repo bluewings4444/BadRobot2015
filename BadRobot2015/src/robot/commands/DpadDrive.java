@@ -33,7 +33,8 @@ public class DpadDrive extends BadCommand {
 
 	@Override
 	protected void end() {
-		driveTrain.tankDrive(0,0);	
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
