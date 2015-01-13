@@ -1,4 +1,4 @@
-// im testing something out, i'll get rid of this
+
 package org.usfirst.frc.team1014.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
