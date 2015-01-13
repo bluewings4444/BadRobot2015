@@ -1,6 +1,6 @@
-package org.usfirst.frc.team1014.robot.subsystems;
+package robot.subsystems;
 
-import org.usfirst.frc.team1014.robot.OI;
+import robot.OI;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**

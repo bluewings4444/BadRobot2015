@@ -1,13 +1,17 @@
 
-package org.usfirst.frc.team1014.robot;
+package robot;
 
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-import org.usfirst.frc.team1014.robot.commands.CommandBase;
-
+import robot.commands.BadCommand;
+import robot.commands.CommandBase;
+import robot.commands.TankDrive;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -15,17 +19,22 @@ import org.usfirst.frc.team1014.robot.commands.CommandBase;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class RobotMain extends IterativeRobot {
+public class Robot extends IterativeRobot {
 
+	public static OI oi;
+	public static Joystick controller = new Joystick(0);
+	public static int soCounter = 0; 
 
-    Command autonomousCommand;
+    BadCommand driveRobot;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-		CommandBase.init();
+		oi = new OI();
+        // instantiate the command used for the autonomous period
+        //driveRobot = new DriveRobot(); // This line throws an error in the DRIVER STATION
     }
 	
 	public void disabledPeriodic() {
@@ -34,7 +43,7 @@ public class RobotMain extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+
     }
 
     /**
@@ -45,11 +54,7 @@ public class RobotMain extends IterativeRobot {
     }
 
     public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-        // teleop starts running. If you want the autonomous to 
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
-
+    	CommandBase.init();
     }
 
     /**
@@ -64,7 +69,7 @@ public class RobotMain extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        Scheduler.getInstance().run();
+    	Scheduler.getInstance().run();
     }
     
     /**
@@ -73,8 +78,14 @@ public class RobotMain extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+	public static void so(Object s)
+	{
+		if(soCounter > 100)
+		{
+			System.out.println("Robot: " + s);
+			soCounter = 0;
+		}
+		soCounter++;
+	}
     
-    private void log(String input) {
-        System.out.println("RobotMain: "+input);
-    }
 }

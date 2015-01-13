@@ -1,14 +1,17 @@
-package org.usfirst.frc.team1014.robot.commands;
+package robot.commands;
 
-import org.usfirst.frc.team1014.robot.OI;
-
+import robot.OI;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class DriveRobot extends BadCommand {
+public class TankDrive extends BadCommand {
     
-	public DriveRobot()
+	public TankDrive()
     {
+<<<<<<< HEAD:BadRobot2015/src/org/usfirst/frc/team1014/robot/commands/DriveRobot.java
         //requires((Subsystem) driveTrain); // This line causes the error
+=======
+        requires((Subsystem) driveTrain); // This line causes the error
+>>>>>>> d6efd342df2ae6bca10e71e8a4cfd8c022d1ff84:BadRobot2015/src/robot/commands/TankDrive.java
     }
 
 	@Override
